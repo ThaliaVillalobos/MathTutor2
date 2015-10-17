@@ -22,7 +22,7 @@ char menu();
 int randGen();
 //****************************************************************************************
 //Precondition: Takes in no parameters, is called in every single math function twice
-//Postcondition: A random number is generated between 1 through 12.
+//Postcondition: A random number is generated between 1 through 12.d
 //Returns that number to wherever it was called.
 //Summary: Creates a random number between 1 through 12
 //*****************************************************************************************
@@ -83,32 +83,82 @@ int main()
 }
  
  
-/*char menu()
+char menu()
 {
-
-
-
+    char userChoice;
+    
+    cout << "Welcome Math Tutor 2.0 " << endl;
+    cout << "Today's subjects: Addition, Subtraction" << endl;
+    cout << "Multiplication and Division" << endl;
+    cout << "For Addition please enter in '+'" << endl;
+    cout << "For Subtraction please enter in '-'" << endl;
+    cout << "For Multiplication please enter in '*'" << endl; 
+    cout << "For Subtraction please enter in '/'" << endl; 
+    cout << "If you want to stop please enter in 'Q'" << endl; 
+    cin >> userChoice;
 }
-*/ 
+
 int randGen()
 {
 	int randNum = rand() % 12 + 1;
 	return randNum;
 }
- /*
+ 
 int addition()
 {
-
-
-
+    int answer, userAnswer;
+    int count = 0;
+    
+    for (int ix = 0; ix < 5; ix++)
+    {
+        int num1 = randGen();
+        int num2 = randGen();
+        
+        cout << "What is " << num1 << " + " << num2 << "? ";
+        cin >> userAnswer;
+        answer = (num1 + num2);
+        
+        if (userAnswer == answer)
+        {
+            //cout << compliment() << endl;
+            count++;            
+        }
+        else
+        {
+            //cout << encouragement() << endl;
+        }        
+    }
+    return count; 
 }
  
 int subtraction()
 {
-
-
+    int answer, userAnswer;
+    int count = 0;
+    
+    for (int ix = 0; ix < 5; ix++)
+    {
+        int num1 = randGen();
+        int num2 = randGen();
+        
+        cout << "What is " << num1 << " - " << num2 << "? ";
+        cin >> userAnswer;
+        answer = (num1 - num2);
+        
+        if (userAnswer == answer)
+        {
+            //cout << compliment() << endl;
+            count++;            
+        }
+        else
+        {
+            //cout << encouragement() << endl;
+        }
+        
+    }
+    return count; 
 }
-*/
+
 int multiplication()
 {
 	int num1, num2, userAnswer, answer;
@@ -162,10 +212,9 @@ string compliment()
 
 }
 
-string encouragement()
+void encouragement()
 {
-
-
+    int randNum = rand() % 4 + 1;
 
 }
 */
