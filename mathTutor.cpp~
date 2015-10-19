@@ -76,8 +76,47 @@ string encouragement();
 
 
 int main()
-{
+{   
 	srand(time(0));
+	char userChoice;
+	int overAllTotal=0;
+	int eachCount = 0;
+	
+	do
+	{
+	    userChoice = menu();
+	    
+	    switch (userChoice){
+	        case '+': eachCount = addition();
+	                  cout << "Total correct answered for this session: " << eachCount << endl;
+	                  overAllTotal += eachCount;
+	                  cout << "Overall score so far: " << overAllTotal << endl;
+	                  break;
+	        case '-': eachCount = subtraction();
+	                  cout << "Total correct answered for this session: " << eachCount << endl;
+	                  overAllTotal += eachCount;
+	                  cout << "Overall score so far: " << overAllTotal << endl;
+	                  break;
+	        case '*': eachCount = multiplication();
+	                  cout << "Total correct answered for this session: " << eachCount << endl;
+	                  overAllTotal += eachCount;
+	                  cout << "Overall score so far: " << overAllTotal << endl;
+	                  break;
+	        case '/': eachCount = division();
+	                  cout << "Total correct answered for this session: " << eachCount << endl;
+	                  overAllTotal += eachCount;
+	                  cout << "Overall score so far: " << overAllTotal << endl;
+	                  break;
+	        case 'q': 
+	        case 'Q': cout << "Your overall score: " << overAllTotal << endl;
+	                  userChoice = 'Q';
+	                  break;
+	        default:
+	              cout << "Error unkown symbol, please try again. Reenter your input: " << endl;
+	              cin >> userChoice;
+	              break;
+	     }
+	}while (userChoice != 'Q');
 
     return 0;
 }
@@ -87,15 +126,17 @@ char menu()
 {
     char userChoice;
     
-    cout << "Welcome Math Tutor 2.0 " << endl;
+    cout << "\nWelcome Math Tutor 2.0 " << endl;
     cout << "Today's subjects: Addition, Subtraction" << endl;
     cout << "Multiplication and Division" << endl;
     cout << "For Addition please enter in '+'" << endl;
     cout << "For Subtraction please enter in '-'" << endl;
     cout << "For Multiplication please enter in '*'" << endl; 
-    cout << "For Subtraction please enter in '/'" << endl; 
+    cout << "For Division please enter in '/'" << endl; 
     cout << "If you want to stop please enter in 'Q'" << endl; 
     cin >> userChoice;
+    
+    return userChoice;
 }
 
 int randGen()
@@ -120,12 +161,12 @@ int addition()
         
         if (userAnswer == answer)
         {
-            //cout << compliment() << endl;
+            cout << compliment() << endl;
             count++;            
         }
         else
         {
-            //cout << encouragement() << endl;
+            cout << encouragement() << " The correct answer is: " << answer << "\n"<< endl;
         }        
     }
     return count; 
@@ -147,12 +188,12 @@ int subtraction()
         
         if (userAnswer == answer)
         {
-            //cout << compliment() << endl;
+            cout << compliment() << endl;
             count++;            
         }
         else
         {
-            //cout << encouragement() << endl;
+            cout << encouragement() << " The correct answer: " << answer << "\n"<< endl;
         }
         
     }
@@ -170,11 +211,11 @@ int multiplication()
 	
 		answer = num1 * num2;
 		if (userAnswer == answer){
-			//cout << compliment() << endl;
+			cout << compliment() << endl;
 			count++;
 		}
 		else{
-			//cout << encouragement() << endl;
+			cout << encouragement() << " The correct answer is: " << answer << "\n"<< endl;
 		}
 	}
 	return count;
@@ -195,26 +236,60 @@ int division()
 	
 		answer = num1 / num2;
 		if (userAnswer == answer){
-			//cout << compliment() << endl;
+			cout << compliment() << endl;
 			count++;
 		}
 		else{
-			//cout << encouragement() << endl;
+			cout << encouragement() << " The correct answer is: " << answer << "\n"<< endl;
 		}
 	}
 	return count;
 }
-/*
+
 string compliment()
-{
-
-
-
-}
-
-void encouragement()
-{
+{   
+    string sentence;
     int randNum = rand() % 4 + 1;
+    
+    switch (randNum){
+        case 1: sentence = "Correct! Way to go （＾ｖ＾）\n";
+                return sentence;
+                break;
+        case 2: sentence = "Awesome ^o^, you got the correct answer\n";
+                return sentence;
+                break;
+        case 3: sentence = "Correct! You are a superstar ✯◡✯!\n";
+                return sentence;
+                break;
+        case 4: sentence = "Correct! Your doing great, keep going （‐＾▽＾‐）\n";
+                return sentence;
+                break;
+        default:
+                break;
+    }
+}
+
+string encouragement()
+{
+    string sentence;
+    int randNum = rand() % 4 + 1;
+    
+    switch (randNum){
+        case 1: sentence = "Sorry ͼ(ݓ_ݓ)ͽ , that is wrong.";
+                return sentence;
+                break;
+        case 2: sentence = "Incorrect (~_^), keep trying.";
+                return sentence;
+                break;
+        case 3: sentence = "Dont give up (ô‿ô), you can do this.";
+                return sentence;
+                break;
+        case 4: sentence = "Keep going, don't stop (҂⌣̀_⌣́)ᕤ. ";
+                return sentence;
+                break;
+        default:
+                break;
+    }
 
 }
-*/
+
