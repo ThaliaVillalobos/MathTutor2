@@ -182,20 +182,38 @@ int subtraction()
         int num1 = randGen();
         int num2 = randGen();
         
-        cout << "What is " << num1 << " - " << num2 << "? ";
-        cin >> userAnswer;
-        answer = (num1 - num2);
+        if (num1 >= num2)
+        {              
+            cout << "What is " << num1 << " - " << num2 << "? ";
+            cin >> userAnswer;
+            answer = (num1 - num2);
+            
+            if (userAnswer == answer)
+            {
+                cout << compliment() << endl;
+                count++;            
+            }
+            else
+            {
+                cout << encouragement() << " The correct answer is: " << answer << "\n"<< endl;
+            }
         
-        if (userAnswer == answer)
-        {
-            cout << compliment() << endl;
-            count++;            
-        }
-        else
-        {
-            cout << encouragement() << " The correct answer: " << answer << "\n"<< endl;
-        }
-        
+        else if (num2 > num1)
+        {             
+            cout << "What is " << num2 << " - " << num1 << "? ";
+            cin >> userAnswer;
+            answer = (num2 - num1);
+            
+            if (userAnswer == answer)
+            {
+                cout << compliment() << endl;
+                count++;            
+            }
+            else
+            {
+                cout << encouragement() << " The correct answer is: " << answer << "\n"<< endl;
+            }
+        }   
     }
     return count; 
 }
