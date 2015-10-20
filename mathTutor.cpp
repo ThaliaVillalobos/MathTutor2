@@ -197,7 +197,7 @@ int subtraction()
             {
                 cout << encouragement() << " The correct answer is: " << answer << "\n"<< endl;
             }
-        
+        }
         else if (num2 > num1)
         {             
             cout << "What is " << num2 << " - " << num1 << "? ";
