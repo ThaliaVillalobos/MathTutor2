@@ -62,16 +62,16 @@ int division();
 
 string compliment();
 //***************************************************
-//Precondition: 
-//Postcondition: 
-//Summary: 
+//Precondition: It takes in no parameter and it will be called upon for each function.
+//Postcondition: Return a string with compliment sentence when the user get the correct asnwer. 
+//Summary: The function will display a message to the user when the person answer the problem correctly. 
 //***************************************************
 
 string encouragement();
 //***************************************************
-//Precondition: 
-//Postcondition: 
-//Summary: 
+//Precondition: It takes in no parameter and it will be called upon for each function. 
+//Postcondition: Return a string with encouragement sentence when the user gets the incorrect answer. 
+//Summary: The function will display a message to the user when the person answers the problem incorrectly.  
 //***************************************************
 
 
